@@ -1,7 +1,7 @@
 version: 1
 jobs:
   build:
-    machine:
+    docker:
       - image: ubuntu:xenial
 
     steps:
@@ -11,18 +11,16 @@ jobs:
           command: |
             apt-get update
             apt-get install -y cmake libboost-dev libboost-test-dev lcov build-essential
+
+
       - run:
-          name: set environment
+          name: build
           command: |
             export CMAKE_CMD_OPTION="-DENABLE_COVERAGE=1 -DENABLE_TEST=1"
             export CXX=g++
             export CXX_FOR_BUILD=g++
             export CC_FOR_BUILD=gcc
             gcc --version
-      - run:
-          name: build
-          command: |
-            env
             mkdir build
             cd build
             cmake .. $CMAKE_CMD_OPTION
