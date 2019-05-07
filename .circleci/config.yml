@@ -10,7 +10,7 @@ jobs:
           name: install dependencies
           command: |
             apt-get update
-            apt-get install -y cmake libboost-dev libboost-test-dev lcov build-essential
+            apt-get install -y cmake libboost-dev libboost-test-dev lcov build-essential doxygen boost test-unit-framework
       - run:
           name: set environment
           command: |
@@ -26,7 +26,6 @@ jobs:
             cd build
             cmake .. $CMAKE_CMD_OPTION
             make -j 2
-            pwd
             make test
       - run:
           name: Print the Current Time
