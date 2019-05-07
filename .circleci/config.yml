@@ -22,6 +22,7 @@ jobs:
       - run:
           name: build
           command: |
+            env
             mkdir build
             cd build
             cmake .. $CMAKE_CMD_OPTION
