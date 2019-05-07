@@ -13,11 +13,11 @@ jobs:
       - run:
           name: Greeting
           command: |
-          mkdir build
-          cd build
-          cmake .. $CMAKE_CMD_OPTION
-          make -j 2
-          make test
+            mkdir build
+            cd build
+            cmake .. $CMAKE_CMD_OPTION
+            make -j 2
+            make test
       - run:
           name: Print the Current Time
           command: date
