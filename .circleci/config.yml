@@ -12,7 +12,7 @@ jobs:
             apt-get update
             apt-get install -y cmake libboost-dev libboost-test-dev lcov build-essential
       - run:
-          name: Greeting
+          name: build
           command: |
             mkdir build
             cd build
