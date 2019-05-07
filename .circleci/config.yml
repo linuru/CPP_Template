@@ -26,6 +26,7 @@ jobs:
             cd build
             cmake .. $CMAKE_CMD_OPTION
             make -j 2
+            pwd
             make test
       - run:
           name: Print the Current Time
