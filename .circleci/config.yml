@@ -18,6 +18,7 @@ jobs:
             export CXX=g++
             export CXX_FOR_BUILD=g++
             export CC_FOR_BUILD=gcc
+            gcc --version
       - run:
           name: build
           command: |
