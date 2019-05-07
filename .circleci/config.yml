@@ -12,6 +12,13 @@ jobs:
             apt-get update
             apt-get install -y cmake libboost-dev libboost-test-dev lcov build-essential
       - run:
+          name: set environment
+          command: |
+            export CMAKE_CMD_OPTION="-DENABLE_COVERAGE=1"
+            export CXX=g++
+            export CXX_FOR_BUILD=g++
+            export CC_FOR_BUILD=gcc
+      - run:
           name: build
           command: |
             mkdir build
