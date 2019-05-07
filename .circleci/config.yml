@@ -28,4 +28,6 @@ jobs:
             make test
       - run:
           name: Print the Current Time
-          command: date
+          command: |
+            cat /etc/os-release
+            date
